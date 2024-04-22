@@ -51,8 +51,8 @@ namespace AndroidInAppPurchasesWithCSharp.GodotGooglePlayBilling
             try
             {
                 Status = (int)billingResult["status"];
-                ResponseCode = (billingResult.Contains("response_code") ? (BillingResponseCode?)billingResult["response_code"] : null);
-                DebugMessage = (billingResult.Contains("debug_message") ? (string)billingResult["debug_message"] : null);
+                ResponseCode = (billingResult.ContainsKey("response_code") ? (BillingResponseCode?)(int)billingResult["response_code"] : null);
+                DebugMessage = (billingResult.ContainsKey("debug_message") ? (string)billingResult["debug_message"] : null);
             }
             catch (System.Exception ex)
             {

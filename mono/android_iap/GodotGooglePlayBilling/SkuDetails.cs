@@ -10,7 +10,7 @@ namespace AndroidInAppPurchasesWithCSharp.GodotGooglePlayBilling
 
         public SkuDetails(Dictionary skuDetails)
         {
-            foreach (var key in skuDetails.Keys)
+            foreach (string key in skuDetails.Keys)
             {
                 try
                 {
@@ -62,7 +62,7 @@ namespace AndroidInAppPurchasesWithCSharp.GodotGooglePlayBilling
                             SubscriptionPeriod = (string)skuDetails[key];
                             break;
                         case "type":
-                            switch(skuDetails[key])
+                            switch((string)skuDetails[key])
                             {
                                 case "inapp":
                                     Type = PurchaseType.InApp;

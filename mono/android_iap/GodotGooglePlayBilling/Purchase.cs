@@ -18,7 +18,7 @@ namespace AndroidInAppPurchasesWithCSharp.GodotGooglePlayBilling
 
         public Purchase(Dictionary purchase)
         {
-            foreach (var key in purchase.Keys)
+            foreach (string key in purchase.Keys)
             {
                 try
                 {
@@ -31,7 +31,7 @@ namespace AndroidInAppPurchasesWithCSharp.GodotGooglePlayBilling
                             PackageName = (string)purchase[key];
                             break;
                         case "purchase_state":
-                            PurchaseState = (PurchaseState)purchase[key];
+                            PurchaseState = (PurchaseState)(int)purchase[key];
                             break;
                         case "purchase_time":
                             PurchaseTime = Convert.ToInt64(purchase[key]);
